@@ -19,7 +19,7 @@ public class MonteCarloPi {
 
     Double pi = 4.0 * hitCount / n;
 
-    System.out.printf("%f\n", pi);
+    System.out.printf("pi = %f\n", pi);
   }
 
   Boolean hitOrNot() {
