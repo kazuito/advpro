@@ -6,9 +6,15 @@ public class QuadraticEquation {
     Double a = Double.parseDouble(args[0]);
     Double b = Double.parseDouble(args[1]);
     Double c = Double.parseDouble(args[2]);
+    Double d = discriminant(a, b, c);
+    solve(a, b, c, d);
+  }
 
-    Double d = b * b - 4 * a * c;
+  Double discriminant(Double a, Double b, Double c) {
+    return b * b - 4 * a * c;
+  }
 
+  void solve(Double a, Double b, Double c, Double d) {
     if (d > 0) {
       Double x1 = (-b + Math.sqrt(d)) / (2 * a);
       Double x2 = (-b - Math.sqrt(d)) / (2 * a);
