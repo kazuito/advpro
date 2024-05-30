@@ -1,6 +1,8 @@
 // 第06講 ファイル 練習問題6-2 ディレクトリを作成するコマンド mkdir
 // https://ksuap.github.io/2022autumn/lesson06/assignments/#2-ディレクトリを作成するコマンド-mkdir
 
+import java.io.File;
+
 public class MakeDirectory {
 
   void run(String[] args) {
@@ -17,7 +19,7 @@ public class MakeDirectory {
   }
 
   void makeDirectory(String dirName) {
-    java.io.File dir = new java.io.File(dirName);
+    File dir = new File(dirName);
     if (!dir.mkdir()) {
       System.out.println(dirName + ": could not make directory.");
     }
