@@ -23,7 +23,7 @@ public class Gradiation2 {
     return image;
   }
 
-  public static void main(String[] args) throws IOException {
+  public void main(String[] args) throws IOException {
     Gradiation2 g = new Gradiation2();
     g.run();
   }
