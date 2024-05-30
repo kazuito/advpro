@@ -6,8 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileFinder {
-
     public static void main(String[] args) {
+        FileFinder ff = new FileFinder();
+        ff.run(args);
+    }
+
+    void run(String[] args) {
         String targetName = args[0];
         File dir = new File(args[1]);
 
@@ -23,7 +27,7 @@ public class FileFinder {
         }
     }
 
-    private static void search(String targetName, File dir, List<File> foundFiles) {
+    static void search(String targetName, File dir, List<File> foundFiles) {
         // ディレクトリが存在しない場合やアクセスできない場合のチェック
         if (!dir.exists() || !dir.isDirectory()) {
             return;
