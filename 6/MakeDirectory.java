@@ -6,7 +6,6 @@ import java.io.File;
 public class MakeDirectory {
 
   void run(String[] args) {
-
     if (args.length == 0) {
       System.out.println("enter dir name.");
       return;
@@ -15,11 +14,12 @@ public class MakeDirectory {
     for (String arg : args) {
       makeDirectory(arg);
     }
-
   }
 
   void makeDirectory(String dirName) {
     File dir = new File(dirName);
+
+    // mkdir()メソッドでディレクトリを作成
     if (!dir.mkdir()) {
       System.out.println(dirName + ": could not make directory.");
     }

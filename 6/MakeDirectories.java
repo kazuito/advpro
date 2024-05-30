@@ -19,6 +19,7 @@ public class MakeDirectories {
   void makeDirectory(String dirName) {
     File dir = new File(dirName);
 
+    // mkdirs()メソッドでディレクトリを作成
     if (!dir.mkdirs()) {
       System.out.println(dirName + ": could not make directory.");
     }
