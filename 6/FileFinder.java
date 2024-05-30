@@ -25,18 +25,17 @@ public class FileFinder {
 
     private static void search(String targetName, File dir, List<File> foundFiles) {
         // ディレクトリが存在しない場合やアクセスできない場合のチェック
-        if (dir == null || !dir.exists() || !dir.canRead()) {
+        if (!dir.exists() || !dir.isDirectory()) {
             return;
         }
 
-        // ディレクトリ内のファイルを再帰的に検索
-        if (dir.isDirectory()) {
-            for (File file : dir.listFiles()) {
-                if (file.isDirectory()) {
-                    search(targetName, file, foundFiles);
-                } else if (file.isFile() && file.getName().equals(targetName)) {
-                    foundFiles.add(file);
-                }
+        for (File file : dir.listFiles()) {
+            if (file.isDirectory()) {
+                // ディレクトリの場合は再帰的に検索
+                search(targetName, file, foundFiles);
+            } else if (file.isFile() && file.getName().equals(targetName)) {
+                // ファイルが見つかった場合はリストに追加
+                foundFiles.add(file);
             }
         }
     }
