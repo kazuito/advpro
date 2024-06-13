@@ -8,7 +8,9 @@ import java.io.IOException;
 
 public class Cat2 {
   void run(String[] args) throws IOException {
-    cat(new File(args[0]));
+    for (String arg : args) {
+      cat(new File(arg));
+    }
   }
 
   void cat(File file) throws IOException {
